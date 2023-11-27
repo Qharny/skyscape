@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skyscape/screens/homeScreen.dart';
+import 'package:skyscape/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
