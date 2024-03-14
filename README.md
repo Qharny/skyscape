@@ -14,5 +14,3 @@ Is a state-of-the-art weather app that brings the vastness of the sky right to y
 - Sunny 🌤️
 - Rainy 🌧️
 - Thunderstorm⛈️
-
-
