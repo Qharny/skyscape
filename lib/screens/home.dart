@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skyscape/constant/colors.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -7,10 +8,15 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-        child: Text('Home'),
+        // backgroundColor: bgColor,
+        title: const Text('SKYSCAPE'),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            print("The menu icon is pressed");
+          },
+        ),
       ),
     );
   }
