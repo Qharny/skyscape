@@ -9,13 +9,18 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: bgColor,
-        title: const Text('SKYSCAPE'),
-        centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {
-            print("The menu icon is pressed");
-          },
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                print("The menu icon is pressed");
+              },
+            ),
+            const Text('SKYSCAPE'),
+            IconButton(icon: const Icon(Icons.sunny), onPressed: () {})
+          ],
         ),
       ),
     );
