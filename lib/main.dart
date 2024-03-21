@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skyscape/screens/splash_screen.dart';
+import 'package:flutter_theme_manager/flutter_theme_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-    );
+    return themeManager(themeBuilder: (theme) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const SplashScreen(),
+        theme: theme,
+      );
+    });
   }
 }
