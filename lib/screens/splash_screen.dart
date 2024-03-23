@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void timer() {
-    const duration = Duration(seconds: 5);
+    const duration = Duration(seconds: 10);
 
     Timer(duration, () {
       Navigator.of(context).pushReplacement(

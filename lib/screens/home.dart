@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:skyscape/constant/colors.dart';
+// import 'package:skyscape/constant/colors.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  bool _isDarkMode = false;
+  bool switchThemes = false;
 
   void _toggleTheme() {
     setState(() {
-      _isDarkMode = !_isDarkMode;
+      switchThemes = !switchThemes;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // theme: ThemeData.light(),
-      // darkTheme: ThemeData.dark(),
       appBar: AppBar(
-        // backgroundColor: bgColor,
+        // backgroundColor: AppTheme.theme(
+        // context: context, lightTheme: Colors.blue, darkTheme: Colors.blue),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -33,14 +32,20 @@ class _HomeState extends State<Home> {
                 print("The menu icon is pressed");
               },
             ),
-            const Text('SKYSCAPE'),
+            const Text(
+              'SKYSCAPE',
+              style: TextStyle(
+                  // color: AppTheme.theme(
+                  //     context: context,
+                  //     darkTheme: Colors.black,
+                  //     lightTheme: Colors.black),
+                  ),
+            ),
             IconButton(
-              icon: _isDarkMode
-                  ? const Icon(Icons.wb_sunny)
-                  : const Icon(
-                      Icons.nightlight_round,
-                      // color: white,
-                    ),
+              icon: Icon(
+                switchThemes ? Icons.wb_sunny : Icons.nightlight_round,
+                color: switchThemes ? Colors.white : Colors.black,
+              ),
               onPressed: _toggleTheme,
             )
           ],
