@@ -23,7 +23,16 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Row(),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+                onPressed: () {
+                  // search
+                },
+                icon: const Icon(Icons.search)),
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
