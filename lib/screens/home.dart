@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skyscape/constant/colors.dart';
 // import 'package:skyscape/constant/colors.dart';
 
 class Home extends StatefulWidget {
@@ -22,42 +23,83 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: AppTheme.theme(
-        // context: context, lightTheme: Colors.blue, darkTheme: Colors.blue),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        title: const Row(),
+      ),
+      drawer: Drawer(
+        child: ListView(
           children: [
-            IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                print("The menu icon is pressed");
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: accentColor,
+              ),
+              child: Center(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Welcome!',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 25.0,
+                        color: white),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    'User',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 25.0,
+                        color: white),
+                  )
+                ],
+              )),
+            ),
+            ListTile(
+              title: const Row(
+                children: [
+                  Icon(Icons.settings),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text('Settings'),
+                ],
+              ),
+              onTap: () {
+                // Handle Option 1
               },
             ),
-            // const Text(
-            //   'SKYSCAPE',
-            //   style: TextStyle(
-            //       // color: AppTheme.theme(
-            //       //     context: context,
-            //       //     darkTheme: Colors.black,
-            //       //     lightTheme: Colors.black),
-            //       ),
-            // ),
-            Row(
-              children: [
-                IconButton(
-                    onPressed: () {
-                      print("You pressed the search button");
-                    },
-                    icon: const Icon(Icons.search)),
-                // IconButton(
-                //   icon: const Icon(Icons.more_vert),
-                //   // onPressed: _toggleTheme,
-                //   onPressed: () {
-                //     print("More button is pressed");
-                //   },
-                // )
-              ],
-            )
+            const Divider(),
+            ListTile(
+              title: const Row(
+                children: [
+                  Icon(Icons.help_outline_sharp),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text('About'),
+                ],
+              ),
+              onTap: () {
+                // Handle Option 1
+              },
+            ),
+            const Divider(),
+            ListTile(
+              title: const Row(
+                children: [
+                  Icon(Icons.question_answer),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text('FAQ'),
+                ],
+              ),
+              onTap: () {
+                // Handle Option 1
+              },
+            ),
           ],
         ),
       ),
