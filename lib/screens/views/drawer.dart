@@ -1,5 +1,5 @@
-
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:skyscape/constant/colors.dart';
@@ -15,34 +15,49 @@ class MyDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: accentColor,
-            ),
-            child: Center(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Welcome to SKYSCAPE',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 25.0,
-                      color: white),
+          DrawerHeader(
+              decoration: const BoxDecoration(
+                color: trans,
+                image: DecorationImage(
+                  image: AssetImage('assets/image1.png'),
+                  fit: BoxFit.cover,
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'Your climate companion',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15.0,
-                      color: white),
-                )
-              ],
-            )),
-          ),
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  // blur image
+                  ImageFiltered(
+                    imageFilter: ImageFilter.blur(sigmaX: 5.2, sigmaY: 3),
+                    child: Container(
+                      color: blur,
+                    ),
+                  ),
+                  const Center(
+                      child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Welcome to SKYSCAPE',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 25.0,
+                            color: white),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'Your climate companion',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15.0,
+                            color: white),
+                      )
+                    ],
+                  )),
+                ],
+              )),
           ListTile(
             title: const Row(
               children: [
