@@ -9,4 +9,4 @@ const secondaryColor = Color(0xFF1976D2);
 const accentColor = Color(0xFF2196F3);
 const textColor = Color(0xFF212121);
 const trans = Colors.transparent;
-const blur = Color(0x81000000);
+const blur = Color(0x2B000000);

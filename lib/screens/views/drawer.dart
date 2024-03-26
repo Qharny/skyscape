@@ -19,7 +19,7 @@ class MyDrawer extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: trans,
                 image: DecorationImage(
-                  image: AssetImage('assets/image1.png'),
+                  image: AssetImage('assets/image4.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -27,10 +27,12 @@ class MyDrawer extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   // blur image
-                  ImageFiltered(
-                    imageFilter: ImageFilter.blur(sigmaX: 5.2, sigmaY: 3),
+                  BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                     child: Container(
-                      color: blur,
+                      decoration: const BoxDecoration(
+                        color: Colors.transparent,
+                      ),
                     ),
                   ),
                   const Center(
