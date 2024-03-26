@@ -14,13 +14,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     timer(); // a timer function
   }
 
   void timer() {
-    const duration = Duration(seconds: 10);
+    const duration = Duration(seconds: 5);
 
     Timer(duration, () {
       Navigator.of(context).pushReplacement(

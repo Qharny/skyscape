@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:skyscape/constant/colors.dart';
-// import 'package:skyscape/constant/colors.dart';
+import 'views/drawer.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -11,13 +10,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool switchThemes = false;
-
-  // code to switch theme
-  // void _toggleTheme() {
-  //   setState(() {
-  //     switchThemes = !switchThemes;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -34,84 +26,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: accentColor,
-              ),
-              child: Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Welcome!',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 25.0,
-                        color: white),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'User',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 25.0,
-                        color: white),
-                  )
-                ],
-              )),
-            ),
-            ListTile(
-              title: const Row(
-                children: [
-                  Icon(Icons.settings),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text('Settings'),
-                ],
-              ),
-              onTap: () {
-                // Handle Option 1
-              },
-            ),
-            const Divider(),
-            ListTile(
-              title: const Row(
-                children: [
-                  Icon(Icons.help_outline_sharp),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text('About'),
-                ],
-              ),
-              onTap: () {
-                // Handle Option 1
-              },
-            ),
-            const Divider(),
-            ListTile(
-              title: const Row(
-                children: [
-                  Icon(Icons.question_answer),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text('FAQ'),
-                ],
-              ),
-              onTap: () {
-                // Handle Option 1
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const MyDrawer(),
     );
   }
 }
