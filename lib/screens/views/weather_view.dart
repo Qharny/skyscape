@@ -5,6 +5,13 @@ class WeatherView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    // a session to display the location and weather data
+    return Card(
+      borderOnForeground: true,
+      elevation: 4,
+      margin: EdgeInsets.all(
+        MediaQuery.of(context).size.width * .05,
+      ),
+    );
   }
 }
