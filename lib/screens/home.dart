@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:skyscape/constant/colors.dart';
+import 'package:skyscape/screens/views/weather_view.dart';
 import 'views/drawer.dart';
 // import 'views/navigate.dart';
 
@@ -101,7 +102,8 @@ class _HomeState extends State<Home> {
             child: Container(
               decoration: const BoxDecoration(color: Colors.transparent),
             ),
-          )
+          ),
+          const WeatherView(),
         ],
       ),
     );
